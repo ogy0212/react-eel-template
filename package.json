@@ -13,7 +13,10 @@
     "typescript": "3.4.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev:front": "react-scripts start",
+    "dev:server": "react-scripts build && python app.py develop",
+    "start": "react-scripts build && python app.py",
+    "release": "pyinstaller ./app.py --add-data ./build;./build --onedir --onefile --clean",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
