@@ -16,7 +16,7 @@
     "dev:front": "react-scripts start",
     "dev:server": "react-scripts build && python app.py develop",
     "start": "react-scripts build && python app.py",
-    "release": "pyinstaller ./app.py --add-data ./build;./build --onedir --onefile --clean",
+    "release": "python -m eel app.py build --onedir --onefile --clean --noconsole",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
