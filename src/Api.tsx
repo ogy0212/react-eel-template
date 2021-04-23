@@ -23,4 +23,4 @@ export const InitApi = () => {
     console.log('Api Ready!')
 }
 
-export default InitApi;
+export default eel;

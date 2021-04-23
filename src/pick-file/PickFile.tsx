@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
+import eel from './../Api'
 import './PickFile.css';
-
-// Point Eel web socket to the instance
-export const eel = window.eel
 
 // Set the default path. Would be a text input, but this is a basic example after all
 const defPath = '~'
