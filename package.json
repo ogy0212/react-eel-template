@@ -13,8 +13,8 @@
     "typescript": "3.4.5"
   },
   "scripts": {
-    "dev:front": "react-scripts start",
-    "dev:server": "react-scripts build && python app.py develop",
+    "front": "react-scripts start",
+    "server": "python app.py develop",
     "start": "react-scripts build && python app.py",
     "release": "python -m eel app.py build --onedir --onefile --clean --noconsole",
     "build": "react-scripts build",
