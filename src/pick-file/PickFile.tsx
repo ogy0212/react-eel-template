@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import eel from './../Api'
-import './PickFile.css';
+import Button from '@material-ui/core/Button';
 
 // Set the default path. Would be a text input, but this is a basic example after all
 const defPath = '~'
@@ -17,7 +17,7 @@ export const PickFile = () => {
     return (
         <>
             <p>{message}</p>
-            <button className='PickFile-button' onClick={() => pickFile()}>Pick Random File From `{path}`</button>
+            <Button color="primary" variant="contained" onClick={() => pickFile()}>Pick Random File From `{path}`</Button>
         </>
     );
 }
