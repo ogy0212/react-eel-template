@@ -26,7 +26,7 @@ def start_eel(develop):
         page = {'port': 3000}
     else:
         directory = 'build'
-        app = 'chrome-app'
+        app = 'chrome'
         page = 'index.html'
 
     eel.init(directory, ['.tsx', '.ts', '.jsx', '.js', '.html'])
