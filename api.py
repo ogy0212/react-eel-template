@@ -1,8 +1,8 @@
 import os
 import random
 import uuid
-
 import eel
+import data_accessor as db
 
 @eel.expose  # Expose function to JavaScript
 def say_hello_py(x):
@@ -27,20 +27,16 @@ def pick_file(folder):
     else:
         return '{} is not a valid folder'.format(folder)
 
-mock_todo_list = [
-        {'id': str(uuid.uuid4()), 'text': 'todo1'},
-        {'id': str(uuid.uuid4()), 'text': 'todo2'}
-    ]
+db.init_db()
 
 @eel.expose
 def get_all_todo():
-    return mock_todo_list
+    return db.get_all_todo()
 
 @eel.expose
 def add_todo(text):
-    mock_todo_list.append({'id': str(uuid.uuid4()), 'text': text})
+    db.add_todo(text)
 
 @eel.expose
 def delete_todo(id):
-    global mock_todo_list
-    mock_todo_list = list(filter(lambda x: x['id'] != id, mock_todo_list))
+    db.delete_todo(id)
