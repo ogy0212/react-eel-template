@@ -12,7 +12,7 @@ export const TodoList = () => {
     
     const getAllTodo = () => {
         eel.get_all_todo()((resp: any) => {
-            setTodoList(_ => resp);
+            setTodoList((_: any) => resp);
         });
     }
 

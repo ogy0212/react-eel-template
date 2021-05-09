@@ -16,7 +16,7 @@ def init_db():
 
         cur = conn.cursor()
         cur.execute(
-            'CREATE TABLE todo_list(id INTEGER PRIMARY KEY AUTOINCREMENT, text STRING)')
+            'create table todo_list(id integer primary key autoincrement, text string)')
         conn.commit()
 
         cur.close()
@@ -27,7 +27,7 @@ def get_all_todo():
     conn.row_factory = dict_factory
 
     cur = conn.cursor()
-    cur.execute('SELECT * FROM todo_list')
+    cur.execute('select * from todo_list')
     todo_list = cur.fetchall()
     conn.commit()
 
@@ -40,8 +40,7 @@ def add_todo(text):
     conn.row_factory = dict_factory
 
     cur = conn.cursor()
-    cur.execute(f'INSERT INTO todo_list(text) values("{text}")')
-    todo_list = cur.fetchall()
+    cur.execute('insert into todo_list(text) values(?)', [text])
     conn.commit()
 
     cur.close()
@@ -52,8 +51,7 @@ def delete_todo(id):
     conn.row_factory = dict_factory
 
     cur = conn.cursor()
-    cur.execute(f'DELETE FROM todo_list where id = "{id}"')
-    todo_list = cur.fetchall()
+    cur.execute('delete from todo_list where id = ?', [id]) 
     conn.commit()
 
     cur.close()

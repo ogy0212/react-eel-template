@@ -12,7 +12,7 @@
 # production
 /build
 /dist
-.app.db
+app.db
 
 # misc
 .DS_Store
